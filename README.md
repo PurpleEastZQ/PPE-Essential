@@ -1,16 +1,17 @@
 # PPE Essential
 
-PPE Essential is a lightweight server-side mod that adds useful commands (like `/home`, `/warp`, `/tpa`, `/rtp`) and admin controls, with highly configurable options and polished multilingual messages. No dependencies, no client install.
+PPE Essential is a lightweight server-side mod that adds useful commands (like /home /tpa) and admin controls, with highly configurable options and polished multilingual messages.
+
+![PPE Essential command preview](artwork/ppe-essential-help-preview.png)
 
 ## Features
 
-- Server-side only: players do not need to install the mod on their client.
-- No extra dependencies.
-- Ready out of the box with common essentials-style commands.
-- Polished chat messages, clickable request buttons, titles, and sounds.
-- Highly configurable command toggles and permission levels.
-- Multilingual message support.
-- Persistent player data for homes, warps, back locations, fly, god mode, and notices.
+- Server-side only mod, no client installation required.
+- No extra dependencies, ready out of the box.
+- Polished messages with clickable buttons, titles, and sounds.
+- Configurable command toggles, permission levels and more.
+- Multilingual support with automatic client language detection and a configurable `fallbackLanguage`.
+- Persistent player data for homes, warps, back locations, fly, god mode, and notice triggers.
 
 ## Supported Versions
 
@@ -61,46 +62,15 @@ PPE Essential is a lightweight server-side mod that adds useful commands (like `
 | `/ppe-essential reset all` | Clear all player data. |
 | `/ppe-essential reset notice` | Clear notice trigger data. |
 
+Disabled or unavailable commands are shown in red in `/ppe-essential help`.
+
 ## Configuration
 
-PPE Essential uses a common config file. Command registration toggles require a server restart, while permission level changes are designed to apply without restarting.
-
-General options:
-
-```toml
-fallbackLanguage = "en_us"
-firstJoinNotice = true
-rtpCooldownSeconds = 30
-rtpMinDistance = 2000
-rtpMaxDistance = 5000
-rtpNetherMinDistance = 600
-rtpNetherMaxDistance = 1500
-teleportRequestTimeoutSeconds = 60
-```
-
-Each command has:
-
-```toml
-enabled = true
-permissionLevel = 0
-```
-
-`permissionLevel` uses Minecraft OP permission levels:
-
-| Level | Meaning |
-| --- | --- |
-| 0 | Everyone can use it. |
-| 1-4 | Requires the matching OP permission level. |
+All configuration options are located in `config/ppe_essential-common.toml`.
 
 ## Installation
 
-1. Install NeoForge on the server.
-2. Put the PPE Essential jar into the server's `mods` folder.
-3. Start the server.
-4. Edit the generated config if needed.
-5. Restart the server if you changed command `enabled` toggles.
-
-Clients do not need to install this mod.
+Put the PPE Essential jar into your `mods` folder.
 
 ## Building
 
@@ -108,11 +78,7 @@ Clients do not need to install this mod.
 .\gradlew.bat build --no-daemon
 ```
 
-The built jar will be generated under:
-
-```text
-build/libs/
-```
+Built jars are generated under `build/libs/`.
 
 ## License
 
