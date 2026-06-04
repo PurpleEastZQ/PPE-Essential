@@ -30,7 +30,7 @@ public class PpeLang {
     );
 
     public static MutableComponent component(String key, Object... args) {
-        return componentForLanguage(PpeConfig.defaultLanguage(), key, args);
+        return componentForLanguage(PpeConfig.fallbackLanguage(), key, args);
     }
 
     public static MutableComponent component(ServerPlayer player, String key, Object... args) {
@@ -50,7 +50,7 @@ public class PpeLang {
     }
 
     public static String format(String key, Object... args) {
-        return format(PpeConfig.defaultLanguage(), key, args);
+        return format(PpeConfig.fallbackLanguage(), key, args);
     }
 
     public static String languageFor(ServerPlayer player) {
@@ -59,7 +59,7 @@ public class PpeLang {
             return clientLanguage;
         }
 
-        String configuredLanguage = PpeConfig.defaultLanguage();
+        String configuredLanguage = PpeConfig.fallbackLanguage();
         if (LANGUAGES.containsKey(configuredLanguage)) {
             return configuredLanguage;
         }

@@ -9,11 +9,11 @@ public class PpeConfig {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     private static final Map<String, CommandConfig> COMMANDS = new LinkedHashMap<>();
 
-    public static final ModConfigSpec.ConfigValue<String> DEFAULT_LANGUAGE = BUILDER
+    public static final ModConfigSpec.ConfigValue<String> FALLBACK_LANGUAGE = BUILDER
             .comment("Fallback language used by the server when the player's client language is unsupported.",
                     "This prevents clients without the mod installed from seeing untranslated localization keys.",
                     "Supported values: en_us, zh_cn, zh_tw, zh_hk, ru_ru, de_de, fr_fr, ja_jp, ko_kr")
-            .define("defaultLanguage", "en_us", PpeConfig::isSupportedLanguage);
+            .define("fallbackLanguage", "en_us", PpeConfig::isSupportedLanguage);
 
     public static final ModConfigSpec.BooleanValue FIRST_JOIN_NOTICE = BUILDER
             .comment("Whether PPE Essential should show a one-time command notice when a player first joins the server.")
@@ -88,8 +88,8 @@ public class PpeConfig {
                 || "ko_kr".equals(language));
     }
 
-    public static String defaultLanguage() {
-        return DEFAULT_LANGUAGE.get();
+    public static String fallbackLanguage() {
+        return FALLBACK_LANGUAGE.get();
     }
 
     public static boolean firstJoinNotice() {
