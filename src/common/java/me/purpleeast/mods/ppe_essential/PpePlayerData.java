@@ -30,7 +30,7 @@ public class PpePlayerData extends SavedData {
 
     public static PpePlayerData get(MinecraftServer server) {
         return server.getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(
-                new SavedData.Factory<>(PpePlayerData::new, PpePlayerData::load),
+                new SavedData.Factory<>(PpePlayerData::new, PpePlayerData::load, null),
                 NAME
         );
     }
@@ -173,6 +173,7 @@ public class PpePlayerData extends SavedData {
         fly.clear();
         god.clear();
         clearNoticeData();
+        setDirty();
     }
 
     public void clearNoticeData() {

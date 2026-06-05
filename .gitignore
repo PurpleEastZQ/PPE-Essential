@@ -4,7 +4,6 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 
 # Minecraft run directories and generated runtime data
-run/
 runs/
 
 # IntelliJ IDEA
@@ -39,3 +38,6 @@ desktop.ini
 
 # Artwork
 *.psd
+
+# Docs
+docs/

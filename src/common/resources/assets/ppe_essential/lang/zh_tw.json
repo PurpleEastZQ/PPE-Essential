@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§c你還沒有設定家，使用§6/sethome §c進行設定",
   "ppe_essential.suicide.broadcast": "§b%s §7想不開",
-  "ppe_essential.trash.title": "§2§l四次元垃圾桶 §8(關閉後自動清理)",
+  "ppe_essential.trash.title": "§c§l關閉後自動清理",
   "ppe_essential.warp.success": "§a已傳送至 §e%s",
   "ppe_essential.warp.none": "§c不存在此地標: §e%s",
   "ppe_essential.setwarp.success": "§a已設定地標 §e%s",

@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§cВы не установили дом, используйте §6/sethome§c, чтобы сделать это",
   "ppe_essential.suicide.broadcast": "§b%s §7больше не смог продолжать",
-  "ppe_essential.trash.title": "§2§lПустая мусорка §8(очищается при закрытии)",
+  "ppe_essential.trash.title": "§c§lочищается при закрытии",
   "ppe_essential.warp.success": "§aТелепортация к §e%s",
   "ppe_essential.warp.none": "§cТакого варпа нет: §e%s",
   "ppe_essential.setwarp.success": "§aВарп §e%s §aустановлен",

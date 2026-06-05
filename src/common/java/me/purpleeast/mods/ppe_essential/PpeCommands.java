@@ -29,13 +29,9 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.level.Level;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -48,10 +44,7 @@ public class PpeCommands {
     private static final Map<UUID, Integer> RTP_COOLDOWNS = new HashMap<>();
     private static final Map<UUID, String> LAST_COMMANDS = new HashMap<>();
 
-    @SubscribeEvent
-    public static void registerCommands(RegisterCommandsEvent event) {
-        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-
+    public static void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
         if (enabled("tpa")) {
             dispatcher.register(Commands.literal("tpa")
                     .requires(source -> canUse(source, "tpa"))
@@ -215,14 +208,13 @@ public class PpeCommands {
         }
     }
 
-    @SubscribeEvent
-    public static void onServerTick(ServerTickEvent.Post event) {
-        int tick = event.getServer().getTickCount();
-        expireRequests(event.getServer(), tick, TPA_REQUESTS, "ppe_essential.tpa.timeout.sender", "ppe_essential.tpa.timeout.target");
-        expireRequests(event.getServer(), tick, TPAHERE_REQUESTS, "ppe_essential.tpahere.timeout.sender", "ppe_essential.tpahere.timeout.target");
+    public static void onServerTick(MinecraftServer server) {
+        int tick = server.getTickCount();
+        expireRequests(server, tick, TPA_REQUESTS, "ppe_essential.tpa.timeout.sender", "ppe_essential.tpa.timeout.target");
+        expireRequests(server, tick, TPAHERE_REQUESTS, "ppe_essential.tpahere.timeout.sender", "ppe_essential.tpahere.timeout.target");
         RTP_COOLDOWNS.entrySet().removeIf(entry -> entry.getValue() <= tick);
         if (tick % 20 == 0) {
-            keepFlyEnabled(event.getServer());
+            keepFlyEnabled(server);
         }
     }
 
@@ -540,7 +532,7 @@ public class PpeCommands {
             send(player, "ppe_essential.repeat.none");
             return 0;
         }
-        if (normalized.toLowerCase(Locale.ROOT).contains("repeat")) {
+        if (rootCommand(normalized).equalsIgnoreCase("repeat")) {
             send(player, "ppe_essential.repeat.blocked");
             return 0;
         }

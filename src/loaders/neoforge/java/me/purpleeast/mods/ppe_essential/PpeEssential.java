@@ -14,7 +14,7 @@ public class PpeEssential {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public PpeEssential(IEventBus modEventBus, ModContainer modContainer) {
-        NeoForge.EVENT_BUS.register(PpeCommands.class);
+        NeoForge.EVENT_BUS.register(PpeNeoForgeCommands.class);
         NeoForge.EVENT_BUS.register(PpeEvents.class);
         modContainer.registerConfig(ModConfig.Type.COMMON, PpeConfig.SPEC);
     }

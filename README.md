@@ -22,8 +22,9 @@ PPE Essential is a lightweight mod that adds useful commands (like /home /tpa) a
 ## Supported Versions
 
 - NeoForge 1.21.1
+- Fabric 1.21.1
 
-Fabric support and additional Minecraft versions are in progress.
+Additional Minecraft 1.21+ versions are planned.
 
 <br>
 
@@ -84,10 +85,20 @@ All configuration options are located in `config/ppe_essential-common.toml`.
 
 ## Building & Installation
 
+Build NeoForge:
+
 ```powershell
 .\gradlew.bat buildNeoForge --no-daemon
 ```
 
+Build Fabric:
+
+```powershell
+.\gradlew.bat buildFabric --no-daemon
+```
+
 Built jars are generated under `build/libs/`.
 
-Put the jar into your `mods` folder.
+Put the matches jar into your `mods` folder.
+
+Fabric requires Fabric API.

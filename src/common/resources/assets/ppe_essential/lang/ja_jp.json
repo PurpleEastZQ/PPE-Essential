@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§cホームを設定していません。§6/sethome §cで設定できます",
   "ppe_essential.suicide.broadcast": "§b%s §7はもう耐えられませんでした",
-  "ppe_essential.trash.title": "§2§l虚無のゴミ箱 §8(閉じると消去されます)",
+  "ppe_essential.trash.title": "§c§l閉じると消去されます",
   "ppe_essential.warp.success": "§e%s §aへテレポートしました",
   "ppe_essential.warp.none": "§cそのワープは存在しません: §e%s",
   "ppe_essential.setwarp.success": "§e%s §aのワープを設定しました",

@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§cDu hast kein Home gesetzt, nutze §6/sethome§c, um eines zu setzen",
   "ppe_essential.suicide.broadcast": "§b%s §7konnte nicht mehr",
-  "ppe_essential.trash.title": "§2§lLeerer Mülleimer §8(wird beim Schließen geleert)",
+  "ppe_essential.trash.title": "§c§lwird beim Schließen geleert",
   "ppe_essential.warp.success": "§aZu §e%s §ateleportiert",
   "ppe_essential.warp.none": "§cDieser Warp existiert nicht: §e%s",
   "ppe_essential.setwarp.success": "§aWarp §e%s §agesetzt",

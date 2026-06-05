@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§c집을 설정하지 않았습니다. §6/sethome §c명령어로 설정하세요",
   "ppe_essential.suicide.broadcast": "§b%s §7님은 더 이상 버티지 못했습니다",
-  "ppe_essential.trash.title": "§2§l공허 쓰레기통 §8(닫으면 비워짐)",
+  "ppe_essential.trash.title": "§c§l닫으면 비워짐",
   "ppe_essential.warp.success": "§e%s§a(으)로 순간이동했습니다",
   "ppe_essential.warp.none": "§c해당 워프가 없습니다: §e%s",
   "ppe_essential.setwarp.success": "§e%s §a워프를 설정했습니다",

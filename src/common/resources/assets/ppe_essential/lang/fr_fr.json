@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§cVous n'avez pas défini de home, utilisez §6/sethome §cpour en définir un",
   "ppe_essential.suicide.broadcast": "§b%s §7n'en pouvait plus",
-  "ppe_essential.trash.title": "§2§lPoubelle du néant §8(se vide à la fermeture)",
+  "ppe_essential.trash.title": "§c§lse vide à la fermeture",
   "ppe_essential.warp.success": "§aTéléporté vers §e%s",
   "ppe_essential.warp.none": "§cCe warp n'existe pas : §e%s",
   "ppe_essential.setwarp.success": "§aWarp §e%s §adéfini",

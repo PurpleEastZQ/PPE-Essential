@@ -51,7 +51,7 @@
   "ppe_essential.home.subtitle": "§b%s",
   "ppe_essential.home.none": "§cYou have not set a home, use §6/sethome §cto set one",
   "ppe_essential.suicide.broadcast": "§b%s §7couldn't take it anymore",
-  "ppe_essential.trash.title": "§2§lVoid Trash Can §8(clears when closed)",
+  "ppe_essential.trash.title": "§c§lclears when closed",
   "ppe_essential.warp.success": "§aTeleported to §e%s",
   "ppe_essential.warp.none": "§cNo such warp: §e%s",
   "ppe_essential.setwarp.success": "§aSet warp §e%s",
