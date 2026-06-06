@@ -4,6 +4,7 @@
   "ppe_essential.request.deny": "§c§l[Нажмите, чтобы отклонить]",
   "ppe_essential.request.deny.tooltip": "§c§lНажмите, чтобы отклонить!",
   "ppe_essential.teleport.missing_dimension": "§cЦелевое измерение не существует, телепортация не удалась",
+  "ppe_essential.teleport.request.self_disabled": "§cЗапросы телепортации самому себе отключены",
   "ppe_essential.tpa.auto.target": "§aВы автоматически приняли §eTPA§a-запрос от §b%s",
   "ppe_essential.tpa.auto.sender": "§b%s §aавтоматически принял ваш §eTPA§a-запрос",
   "ppe_essential.tpa.request.target": "§b%s §aхочет телепортироваться к вам §7(используйте §6/tpaauto §7для автопринятия)",

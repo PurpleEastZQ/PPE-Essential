@@ -43,6 +43,10 @@ public class PpeConfig {
             .comment("How long TPA and TPAhere requests stay valid, in seconds.")
             .defineInRange("teleportRequestTimeoutSeconds", 60, 1, 86400);
 
+    public static final ModConfigSpec.BooleanValue ALLOW_SELF_TELEPORT_REQUESTS = BUILDER
+            .comment("Whether players may send /tpa and /tpahere requests to themselves.")
+            .define("allowSelfTeleportRequests", true);
+
     static {
         BUILDER.push("commands");
         command("tpa", true, 0);
@@ -118,6 +122,10 @@ public class PpeConfig {
 
     public static int teleportRequestTimeoutSeconds() {
         return TELEPORT_REQUEST_TIMEOUT_SECONDS.get();
+    }
+
+    public static boolean allowSelfTeleportRequests() {
+        return ALLOW_SELF_TELEPORT_REQUESTS.get();
     }
 
     public static boolean commandEnabled(String command) {

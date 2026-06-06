@@ -25,6 +25,7 @@ public class PpeConfig {
     private static int rtpNetherMinDistance = 600;
     private static int rtpNetherMaxDistance = 1500;
     private static int teleportRequestTimeoutSeconds = 60;
+    private static boolean allowSelfTeleportRequests = true;
     private static long lastLoadedModifiedMillis = Long.MIN_VALUE;
 
     static {
@@ -113,6 +114,11 @@ public class PpeConfig {
         return teleportRequestTimeoutSeconds;
     }
 
+    public static boolean allowSelfTeleportRequests() {
+        reloadIfChanged();
+        return allowSelfTeleportRequests;
+    }
+
     public static boolean commandEnabled(String command) {
         reloadIfChanged();
         CommandConfig config = COMMANDS.get(command);
@@ -158,6 +164,7 @@ public class PpeConfig {
         rtpNetherMinDistance = 600;
         rtpNetherMaxDistance = 1500;
         teleportRequestTimeoutSeconds = 60;
+        allowSelfTeleportRequests = true;
         for (Map.Entry<String, CommandConfig> entry : COMMANDS.entrySet()) {
             entry.getValue().reset();
         }
@@ -205,6 +212,7 @@ public class PpeConfig {
             case "rtpNetherMinDistance" -> rtpNetherMinDistance = parseInt(value, rtpNetherMinDistance, 0, 30000000);
             case "rtpNetherMaxDistance" -> rtpNetherMaxDistance = parseInt(value, rtpNetherMaxDistance, 1, 30000000);
             case "teleportRequestTimeoutSeconds" -> teleportRequestTimeoutSeconds = parseInt(value, teleportRequestTimeoutSeconds, 1, 86400);
+            case "allowSelfTeleportRequests" -> allowSelfTeleportRequests = parseBoolean(value, allowSelfTeleportRequests);
             default -> {
             }
         }
@@ -279,7 +287,8 @@ public class PpeConfig {
         builder.append("rtpMaxDistance = 5000\n");
         builder.append("rtpNetherMinDistance = 600\n");
         builder.append("rtpNetherMaxDistance = 1500\n");
-        builder.append("teleportRequestTimeoutSeconds = 60\n\n");
+        builder.append("teleportRequestTimeoutSeconds = 60\n");
+        builder.append("allowSelfTeleportRequests = true\n\n");
         builder.append("[commands]\n\n");
         for (Map.Entry<String, CommandConfig> entry : COMMANDS.entrySet()) {
             builder.append("[commands.").append(entry.getKey()).append("]\n");

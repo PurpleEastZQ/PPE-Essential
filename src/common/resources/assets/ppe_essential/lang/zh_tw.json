@@ -4,6 +4,7 @@
   "ppe_essential.request.deny": "§c§l[點擊拒絕]",
   "ppe_essential.request.deny.tooltip": "§c§l點擊拒絕！",
   "ppe_essential.teleport.missing_dimension": "§c目標維度不存在，無法傳送",
+  "ppe_essential.teleport.request.self_disabled": "§c伺服器已禁止向自己傳送請求",
   "ppe_essential.tpa.auto.target": "§a你已自動接受來自 §b%s §a的 §eTPA §a請求",
   "ppe_essential.tpa.auto.sender": "§b%s §a自動接受了你的 §eTPA §a請求",
   "ppe_essential.tpa.request.target": "§b%s §a請求傳送到你的位置 §7(你可以用§6/tpaauto §7開啟自動接受)",

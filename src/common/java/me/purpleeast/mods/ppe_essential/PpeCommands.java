@@ -226,6 +226,11 @@ public class PpeCommands {
     }
 
     private static int tpa(ServerPlayer sender, ServerPlayer target) {
+        if (!PpeConfig.allowSelfTeleportRequests() && sender.getUUID().equals(target.getUUID())) {
+            send(sender, "ppe_essential.teleport.request.self_disabled");
+            return 0;
+        }
+
         PpePlayerData data = PpePlayerData.get(sender.server);
         if (data.isTpaAuto(target.getUUID())) {
             send(target, "ppe_essential.tpa.auto.target", sender.getName());
@@ -287,6 +292,11 @@ public class PpeCommands {
     }
 
     private static int tpahere(ServerPlayer sender, ServerPlayer target) {
+        if (!PpeConfig.allowSelfTeleportRequests() && sender.getUUID().equals(target.getUUID())) {
+            send(sender, "ppe_essential.teleport.request.self_disabled");
+            return 0;
+        }
+
         if (!TPAHERE_REQUESTS.containsKey(target.getUUID())) {
             int timeoutSeconds = PpeConfig.teleportRequestTimeoutSeconds();
             TPAHERE_REQUESTS.put(target.getUUID(), new PendingRequest(sender.getUUID(), sender.server.getTickCount() + secondsToTicks(timeoutSeconds)));
