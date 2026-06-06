@@ -19,6 +19,9 @@ public class PpeConfig {
 
     private static String fallbackLanguage = "en_us";
     private static boolean firstJoinNotice = true;
+    private static boolean preventCreeperBlockDamage = true;
+    private static boolean preventEndermanBlockDamage = true;
+    private static boolean preventRavagerBlockDamage = true;
     private static int rtpCooldownSeconds = 30;
     private static int rtpMinDistance = 2000;
     private static int rtpMaxDistance = 5000;
@@ -82,6 +85,21 @@ public class PpeConfig {
     public static boolean firstJoinNotice() {
         reloadIfChanged();
         return firstJoinNotice;
+    }
+
+    public static boolean preventCreeperBlockDamage() {
+        reloadIfChanged();
+        return preventCreeperBlockDamage;
+    }
+
+    public static boolean preventEndermanBlockDamage() {
+        reloadIfChanged();
+        return preventEndermanBlockDamage;
+    }
+
+    public static boolean preventRavagerBlockDamage() {
+        reloadIfChanged();
+        return preventRavagerBlockDamage;
     }
 
     public static int rtpCooldownSeconds() {
@@ -158,6 +176,9 @@ public class PpeConfig {
     private static void resetDefaults() {
         fallbackLanguage = "en_us";
         firstJoinNotice = true;
+        preventCreeperBlockDamage = true;
+        preventEndermanBlockDamage = true;
+        preventRavagerBlockDamage = true;
         rtpCooldownSeconds = 30;
         rtpMinDistance = 2000;
         rtpMaxDistance = 5000;
@@ -206,6 +227,9 @@ public class PpeConfig {
                 }
             }
             case "firstJoinNotice" -> firstJoinNotice = parseBoolean(value, firstJoinNotice);
+            case "preventCreeperBlockDamage" -> preventCreeperBlockDamage = parseBoolean(value, preventCreeperBlockDamage);
+            case "preventEndermanBlockDamage" -> preventEndermanBlockDamage = parseBoolean(value, preventEndermanBlockDamage);
+            case "preventRavagerBlockDamage" -> preventRavagerBlockDamage = parseBoolean(value, preventRavagerBlockDamage);
             case "rtpCooldownSeconds" -> rtpCooldownSeconds = parseInt(value, rtpCooldownSeconds, 0, 86400);
             case "rtpMinDistance" -> rtpMinDistance = parseInt(value, rtpMinDistance, 0, 30000000);
             case "rtpMaxDistance" -> rtpMaxDistance = parseInt(value, rtpMaxDistance, 1, 30000000);
@@ -282,6 +306,12 @@ public class PpeConfig {
         builder.append("# Supported values: en_us, zh_cn, zh_tw, zh_hk, ru_ru, de_de, fr_fr, ja_jp, ko_kr\n");
         builder.append("fallbackLanguage = \"en_us\"\n");
         builder.append("firstJoinNotice = true\n");
+        builder.append("# Prevent creepers from breaking blocks with explosions.\n");
+        builder.append("preventCreeperBlockDamage = true\n");
+        builder.append("# Prevent endermen from picking up or placing blocks.\n");
+        builder.append("preventEndermanBlockDamage = true\n");
+        builder.append("# Prevent ravagers from breaking leaves and crops.\n");
+        builder.append("preventRavagerBlockDamage = true\n");
         builder.append("rtpCooldownSeconds = 30\n");
         builder.append("rtpMinDistance = 2000\n");
         builder.append("rtpMaxDistance = 5000\n");

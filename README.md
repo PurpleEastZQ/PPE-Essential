@@ -14,6 +14,7 @@ PPE Essential is a lightweight mod that adds useful commands (like /home /tpa) a
 - No extra dependencies, ready out of the box.
 - Polished messages with clickable buttons, titles, and sounds.
 - Configurable command toggles, permission levels and more.
+- Configurable protection against creeper, enderman, and ravager block damage.
 - Multilingual support with automatic client language detection and a configurable `fallbackLanguage`.
 - Persistent player data for homes, warps, back locations, fly, god mode, and notice triggers.
 
@@ -110,6 +111,4 @@ Build environment requirements:
 
 Built jars are generated under `build/libs/`.
 
-Put the matches jar into your `mods` folder.
-
-Fabric requires Fabric API.
+Put the matches jar into your `mods` folder. Fabric requires Fabric API.

@@ -19,6 +19,18 @@ public class PpeConfig {
             .comment("Whether PPE Essential should show a one-time command notice when a player first joins the server.")
             .define("firstJoinNotice", true);
 
+    public static final ModConfigSpec.BooleanValue PREVENT_CREEPER_BLOCK_DAMAGE = BUILDER
+            .comment("Whether creepers are prevented from breaking blocks with explosions.")
+            .define("preventCreeperBlockDamage", true);
+
+    public static final ModConfigSpec.BooleanValue PREVENT_ENDERMAN_BLOCK_DAMAGE = BUILDER
+            .comment("Whether endermen are prevented from picking up or placing blocks.")
+            .define("preventEndermanBlockDamage", true);
+
+    public static final ModConfigSpec.BooleanValue PREVENT_RAVAGER_BLOCK_DAMAGE = BUILDER
+            .comment("Whether ravagers are prevented from breaking leaves and crops.")
+            .define("preventRavagerBlockDamage", true);
+
     public static final ModConfigSpec.IntValue RTP_COOLDOWN_SECONDS = BUILDER
             .comment("Cooldown in seconds for /rtp. Use 0 to disable the cooldown.")
             .defineInRange("rtpCooldownSeconds", 30, 0, 86400);
@@ -98,6 +110,18 @@ public class PpeConfig {
 
     public static boolean firstJoinNotice() {
         return FIRST_JOIN_NOTICE.get();
+    }
+
+    public static boolean preventCreeperBlockDamage() {
+        return PREVENT_CREEPER_BLOCK_DAMAGE.get();
+    }
+
+    public static boolean preventEndermanBlockDamage() {
+        return PREVENT_ENDERMAN_BLOCK_DAMAGE.get();
+    }
+
+    public static boolean preventRavagerBlockDamage() {
+        return PREVENT_RAVAGER_BLOCK_DAMAGE.get();
     }
 
     public static int rtpCooldownSeconds() {

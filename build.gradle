@@ -103,6 +103,10 @@ tasks.withType(JavaCompile).configureEach {
     options.release = target_java_version.toInteger()
 }
 
+tasks.withType(JavaExec).configureEach {
+    standardInput = System.in
+}
+
 if (isNeoForge) {
 neoForge {
     // Specify the version of NeoForge to use.

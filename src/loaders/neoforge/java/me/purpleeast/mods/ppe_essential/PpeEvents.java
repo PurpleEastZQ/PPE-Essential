@@ -9,9 +9,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.CommandEvent;
+import net.neoforged.neoforge.event.entity.EntityMobGriefingEvent;
 import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.level.ExplosionEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
@@ -66,6 +68,20 @@ public class PpeEvents {
                     player.getUUID(),
                     new PpeLocation(player.serverLevel().dimension(), event.getPrevX(), event.getPrevY(), event.getPrevZ(), player.getYRot(), player.getXRot())
             );
+        }
+    }
+
+    @SubscribeEvent
+    public static void onMobGriefing(EntityMobGriefingEvent event) {
+        if (PpeMobGriefing.shouldPreventBlockGriefing(event.getEntity())) {
+            event.setCanGrief(false);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onExplosionDetonate(ExplosionEvent.Detonate event) {
+        if (PpeMobGriefing.shouldPreventCreeperExplosionBlocks(event.getExplosion())) {
+            event.getAffectedBlocks().clear();
         }
     }
 

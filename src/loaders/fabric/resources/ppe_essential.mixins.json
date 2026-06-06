@@ -4,6 +4,11 @@
   "compatibilityLevel": "${mixin_compatibility_level}",
   "mixins": [
     "CommandsMixin",
+    "CreeperMixin",
+    "CropBlockMixin",
+    "EndermanLeaveBlockGoalMixin",
+    "EndermanTakeBlockGoalMixin",
+    "RavagerMixin",
     "ServerPlayerMixin"
   ],
   "injectors": {
