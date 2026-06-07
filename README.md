@@ -84,7 +84,21 @@ All configuration options are located in `config/ppe_essentials-common.toml`.
 
 ## Building & Installation
 
-When passing PowerShell project properties, quote the whole `-P...` argument:
+To build every supported NeoForge and Fabric jar:
+
+```powershell
+.\build-all-versions.ps1
+```
+
+The script discovers supported Minecraft versions from `gradle.properties` and `src/versions/`.
+Use `-Clean` to clean once before the build matrix, or limit the run when needed:
+
+```powershell
+.\build-all-versions.ps1 -Clean
+.\build-all-versions.ps1 -MinecraftVersion 1.21.11 -Loader fabric
+```
+
+For single-target builds, pass PowerShell project properties by quoting the whole `-P...` argument:
 
 ```powershell
 .\gradlew.bat buildNeoForge --no-daemon
@@ -95,6 +109,6 @@ When passing PowerShell project properties, quote the whole `-P...` argument:
 .\gradlew.bat buildFabric "-Ptarget_minecraft_version=26.1.2" --no-daemon
 ```
 
-Built jars are generated under `build/libs/`. Put the matches jar into your `mods` folder.
+Built jars are generated under `build/libs/`. Put the matching jar into your `mods` folder.
 
 Fabric requires Fabric API.
