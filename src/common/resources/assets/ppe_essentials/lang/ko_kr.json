@@ -58,7 +58,7 @@
   "ppe_essentials.setwarp.success": "§e%s §a워프를 설정했습니다",
   "ppe_essentials.delwarp.success": "§a워프 §e%s §a을(를) §c§l삭제§a했습니다",
   "ppe_essentials.delwarp.none": "§c해당 워프가 없습니다: §e%s",
-  "ppe_essentials.first_join.notice": "§a이 서버에는 §dPPE Essentials §a이 설치되어 있습니다. §6/home /tpa §a같은 명령어를 사용할 수 있습니다. §6/ppe-ess help §a로 명령어 목록을 확인하세요 §2§l[클릭하여 보기]",
+  "ppe_essentials.first_join.notice": "§dPPE Essentials §a이 설치되어 있습니다. §6/home /tpa §a같은 명령어를 사용할 수 있습니다. §6/ppe-ess help §a로 명령어 목록을 확인하세요 §2§l[클릭하여 보기]",
   "ppe_essentials.first_join.notice.tooltip": "§2§lPPE Essentials 도움말 보기",
   "ppe_essentials.help.header": "§dPPE Essentials §a명령어:",
   "ppe_essentials.help.teleport": "§7순간이동: ",

@@ -60,7 +60,11 @@ public class PpeConfig {
             .define("allowSelfTeleportRequests", true);
 
     static {
-        BUILDER.push("commands");
+        BUILDER.comment(
+                "Command settings.",
+                "enabled: whether the command is registered when the server starts. Changes require a server restart.",
+                "permissionLevel: required OP permission level. Use 0 to allow everyone. Changes apply without restart."
+        ).push("commands");
         command("tpa", true, 0);
         command("tpaa", true, 0);
         command("tpad", true, 0);
@@ -163,19 +167,12 @@ public class PpeConfig {
     }
 
     private static void command(String name, boolean enabled, int permissionLevel) {
-        String command = displayCommand(name);
         BUILDER.push(name);
         COMMANDS.put(name, new CommandConfig(
-                BUILDER.comment("Whether /" + command + " is registered when the server starts. Changes require a server restart.")
-                        .define("enabled", enabled),
-                BUILDER.comment("Required OP permission level for /" + command + ". Use 0 to allow everyone. Changes apply without restart.")
-                        .defineInRange("permissionLevel", permissionLevel, 0, 4)
+                BUILDER.define("enabled", enabled),
+                BUILDER.defineInRange("permissionLevel", permissionLevel, 0, 4)
         ));
         BUILDER.pop();
-    }
-
-    private static String displayCommand(String command) {
-        return "ppe-ess-reset".equals(command) ? "ppe-ess reset" : command;
     }
 
     private record CommandConfig(ModConfigSpec.BooleanValue enabled, ModConfigSpec.IntValue permissionLevel) {

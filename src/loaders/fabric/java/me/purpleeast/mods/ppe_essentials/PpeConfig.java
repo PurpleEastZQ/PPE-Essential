@@ -303,8 +303,10 @@ public class PpeConfig {
     private static String defaultConfig() {
         StringBuilder builder = new StringBuilder();
         builder.append("# Fallback language used by the server when the player's client language is unsupported.\n");
+        builder.append("# This prevents clients without the mod installed from seeing untranslated localization keys.\n");
         builder.append("# Supported values: en_us, zh_cn, zh_tw, zh_hk, ru_ru, de_de, fr_fr, ja_jp, ko_kr\n");
         builder.append("fallbackLanguage = \"en_us\"\n");
+        builder.append("# Whether PPE Essentials should show a one-time command notice when a player first joins the server.\n");
         builder.append("firstJoinNotice = true\n");
         builder.append("# Prevent creepers from breaking blocks with explosions.\n");
         builder.append("preventCreeperBlockDamage = true\n");
@@ -312,27 +314,30 @@ public class PpeConfig {
         builder.append("preventEndermanBlockDamage = true\n");
         builder.append("# Prevent ravagers from breaking leaves and crops.\n");
         builder.append("preventRavagerBlockDamage = true\n");
+        builder.append("# Cooldown in seconds for /rtp. Use 0 to disable the cooldown.\n");
         builder.append("rtpCooldownSeconds = 30\n");
+        builder.append("# Minimum distance from the current position for /rtp in normal dimensions.\n");
         builder.append("rtpMinDistance = 2000\n");
+        builder.append("# Maximum distance from the current position for /rtp in normal dimensions.\n");
         builder.append("rtpMaxDistance = 5000\n");
+        builder.append("# Minimum distance from the current position for /rtp in the Nether.\n");
         builder.append("rtpNetherMinDistance = 600\n");
+        builder.append("# Maximum distance from the current position for /rtp in the Nether.\n");
         builder.append("rtpNetherMaxDistance = 1500\n");
+        builder.append("# How long TPA and TPAhere requests stay valid, in seconds.\n");
         builder.append("teleportRequestTimeoutSeconds = 60\n");
+        builder.append("# Whether players may send /tpa and /tpahere requests to themselves.\n");
         builder.append("allowSelfTeleportRequests = true\n\n");
+        builder.append("# Command settings.\n");
+        builder.append("# enabled: whether the command is registered when the server starts. Changes require a server restart.\n");
+        builder.append("# permissionLevel: required OP permission level. Use 0 to allow everyone. Changes apply without restart.\n");
         builder.append("[commands]\n\n");
         for (Map.Entry<String, CommandConfig> entry : COMMANDS.entrySet()) {
-            String command = displayCommand(entry.getKey());
             builder.append("[commands.").append(entry.getKey()).append("]\n");
-            builder.append("# Whether /").append(command).append(" is registered when the server starts. Changes require a server restart.\n");
             builder.append("enabled = ").append(entry.getValue().enabled()).append("\n");
-            builder.append("# Required OP permission level for /").append(command).append(". Use 0 to allow everyone. Changes apply without restart.\n");
             builder.append("permissionLevel = ").append(entry.getValue().permissionLevel()).append("\n\n");
         }
         return builder.toString();
-    }
-
-    private static String displayCommand(String command) {
-        return "ppe-ess-reset".equals(command) ? "ppe-ess reset" : command;
     }
 
     private static class CommandConfig {

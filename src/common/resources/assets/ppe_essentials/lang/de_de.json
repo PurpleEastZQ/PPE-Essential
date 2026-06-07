@@ -58,7 +58,7 @@
   "ppe_essentials.setwarp.success": "§aWarp §e%s §agesetzt",
   "ppe_essentials.delwarp.success": "§aWarp §e%s §awurde §c§lgelöscht",
   "ppe_essentials.delwarp.none": "§cDieser Warp existiert nicht: §e%s",
-  "ppe_essentials.first_join.notice": "§aAuf diesem Server ist §dPPE Essentials §ainstalliert. Du kannst Befehle wie §6/home /tpa §anutzen. Nutze §6/ppe-ess help §afür die Befehlsliste §2§l[Zum Anzeigen klicken]",
+  "ppe_essentials.first_join.notice": "§dPPE Essentials §aist installiert. Du kannst Befehle wie §6/home /tpa §anutzen. Nutze §6/ppe-ess help §afür die Befehlsliste §2§l[Zum Anzeigen klicken]",
   "ppe_essentials.first_join.notice.tooltip": "§2§lPPE Essentials-Hilfe anzeigen",
   "ppe_essentials.help.header": "§dPPE Essentials §aBefehle:",
   "ppe_essentials.help.teleport": "§7Teleport: ",
